@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="top.links">
+			<block type="testimonials/link" name="testimonials_link">
+				<action method="addTestimonialsLink"></action>
+			</block>
+		</reference>
+	</default>
+
+	<testimonials_index_index translate="label">
+		<label>Testimonials</label>
+		<remove name="right"/>
+        <remove name="left"/>
+        <reference name="head">
+			<action method="setTitle" translate="title" module="testimonials">
+				<title>Testimonials</title>
+			</action>
+		</reference>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+        	<block type="testimonials/list" name="testimonials_list" template="krypson/testimonials/list.phtml"></block>
+        </reference>
+    </testimonials_index_index>
+
+    <testimonials_index_new translate="label">
+		<label>Testimonials</label>
+		<remove name="right"/>
+        <remove name="left"/>
+        <reference name="head">
+			<action method="setTitle" translate="title" module="testimonials">
+				<title>Add new testimonial</title>
+			</action>
+		</reference>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+        	<block type="testimonials/new" name="testimonials_list" template="krypson/testimonials/new.phtml"></block>
+        </reference>
+    </testimonials_index_new>
+</layout>
