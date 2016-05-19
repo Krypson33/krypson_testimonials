@@ -48,7 +48,7 @@
         	$this->addColumn('status', array(
         		'header' => Mage::helper('testimonials')->__('Status'),
         		'index' => 'status',
-        		'type' => 'number'
+        		'type' => 'text'
         		));
 
         	return parent::_prepareColumns();
