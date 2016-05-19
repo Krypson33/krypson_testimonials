@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Krypson_Testimonials>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Krypson_Testimonials>
+	</modules>
+</config>
