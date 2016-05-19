@@ -24,7 +24,9 @@
 		}
 
 		public function indexAction() {
-			$this->loadLayout()->renderLayout();
+			$this->loadLayout();
+			$this->_initLayoutMessages('customer/session');
+			$this->renderLayout();
 		}
 
 		public function newAction() {
