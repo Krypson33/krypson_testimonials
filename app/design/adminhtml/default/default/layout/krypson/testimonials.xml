@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<adminhtml_testimonials_grid>
+        <update handle="formkey"/>
+        <block type="testimonials/adminhtml_testimonials_grid" name="testimonials.grid" output="toHtml"></block>
+    </adminhtml_testimonials_grid>
+
+    <adminhtml_testimonials_index>
+        <reference name="content">
+            <block type="testimonials/adminhtml_testimonials" name="testimonials.grid.container"></block>
+        </reference>
+    </adminhtml_testimonials_index>
+
+    <adminhtml_testimonials_edit>
+        <reference name="content">
+            <block type="testimonials/adminhtml_testimonials_edit" name="testimonials.form"></block>
+        </reference>
+    </adminhtml_testimonials_edit>
+</layout>
