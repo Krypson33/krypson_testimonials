@@ -1,0 +1,36 @@
+<div class="testimonials-page">
+    <div class="page-title">
+        <h1><?php echo $this->__('Add new testimonial') ?></h1>
+    </div>
+    <?php echo $this->getMessagesBlock()->toHtml() ?>
+    <form action="<?php echo $this->getUrl('testimonials/index/post', array('_secure' => true)) ?>" method="post" id="form-validate">
+    	<div class="fieldset">
+    		<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+    		<h2 class="legend"><?php echo $this->__('Testimonial') ?></h2>
+            <ul class="form-list">
+                <li class="wide">
+                    <label for="email_address" class="required"><em>*</em><?php echo $this->__('Testimonial Content') ?></label>
+                    <div class="input-box">
+                        <textarea name="content" id="content" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Content')) ?>" class="input-text required-entry"></textarea>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="buttons-set">
+        	<p class="required"><?php echo $this->__('* Required Fields') ?></p>
+        	<p class="back-link">
+        		<a href="<?php echo $this->getUrl('testimonials/index/index', array('_secure' => true)) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a>
+        	</p>
+        	<button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Submit')) ?>" class="button">
+        		<span>
+        			<span><?php echo $this->__('Submit') ?></span>
+        		</span>
+        	</button>
+        </div>
+    </form>
+    <script type="text/javascript">
+    	//<![CDATA[
+    		var dataForm = new VarienForm('form-validate', true);
+    	//]]>
+    </script>
+</div>
