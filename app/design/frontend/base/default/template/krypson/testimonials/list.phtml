@@ -1,0 +1,46 @@
+<div class="testimonials-list">
+    <div class="page-title">
+        <h1><?php echo $this->__('Testimonials') ?></h1>
+    </div>
+	 <div class="buttons-set">
+    	<a href="<?php echo $this->getUrl('testimonials/index/new'); ?>" title="<?php echo $this->__('New Testimonial'); ?>" class="button"><?php echo $this->__('Add New Testimonial'); ?></a>
+    </div>
+	<?php echo $this->getPagerHtml(); ?>
+    <?php $_items = $this->getCollection(); ?>
+    <?php echo $this->getMessagesBlock()->toHtml() ?>
+    <?php if($_items->getSize()): ?>
+   
+		<table class="data-table" id="testimonial_table">
+    <col width="1" />
+    <col width="1" />
+    <col />
+    <col width="1" />
+    <col width="1" />
+    <col width="1" />
+    <thead>
+        <tr>
+            <th><?php echo $this->__('ID #') ?></th>
+			<th><span class="nobr"><?php echo $this->__('Created By') ?></span></th>
+            <th><?php echo $this->__('Testimonial') ?></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <?php $_odd = '';$count = 1; ?>
+        <?php foreach ($_items as $_item): ?>
+        <tr>
+            <td><?php echo $count; ?></td>
+            <td><?php echo $_item->getCustomerName(); ?></td>
+            <td><span class="nobr"><?php echo $this->escapeHtml($_item->getTestimonialText()); ?></span></td>
+        </tr>
+        <?php $count++;endforeach; ?>
+    </tbody>
+</table>
+
+    <?php else: ?>
+    	<p class="note-msg"><?php echo $this->__('There are no testimonials available at the moment.'); ?></p>
+    <?php endif ?>
+   
+	<?php echo $this->getPagerHtml(); ?>
+</div>
+<script type="text/javascript">decorateTable('testimonial_table');</script>
